@@ -1,68 +1,49 @@
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         // definisi variabel
-        String nilai_huruf;
-        float nilai_angka;
         int nilai_tugas, nilai_uts, nilai_uas;
-        String keterangan;
+        double nilai_angka;
+        char nilai_huruf;
+        String hasil_kelulusan;
+
+        // input data
         Scanner input = new Scanner(System.in);
-
-        // welcome screen
-        System.out.println("=====================================");
-        System.out.println("Selamat Datang di Program Penilaian Mahasiswa");
-        System.out.println("=====================================");
-
-        // input nilai tugas, uts, uas
-        System.out.print("Masukkan Nilai Tugas  : ");
+        System.out.print("Masukkan nilai tugas  : ");
         nilai_tugas = input.nextInt();
-        System.out.print("Masukkan Nilai UTS    : ");
+        System.out.print("Masukkan nilai uts    : ");
         nilai_uts = input.nextInt();
-        System.out.print("Masukkan Nilai UAS    : ");
+        System.out.print("Masukkan nilai uas    : ");
         nilai_uas = input.nextInt();
+        System.out.println("Nilai Tugas : " + nilai_tugas);
+        System.out.println("Nilai UTS   : " + nilai_uts);  
+        System.out.println("Nilai UAS   : " + nilai_uas);
 
-        // menampilkan hasil input
-        // System.out.println("Nilai Tugas   : " + nilai_tugas);
-        // System.out.println("Nilai UTS     : " + nilai_uts);
-        // System.out.println("Nilai UAS     : " + nilai_uas);
+        // proses perhitungan
+        nilai_angka = (nilai_tugas * 0.2) + (nilai_uts * 0.3) + (nilai_uas * 0.5);
+        System.out.println("Nilai Angka : " + nilai_angka);
 
-        // menghitung nilai angka
-        nilai_angka = (float) (0.2 * nilai_tugas + 0.3 * nilai_uts + 0.5 * nilai_uas);
-        // System.out.println("Nilai Angka   : " + nilai_angka);
-
-        // menentukan nilai huruf
+        // pengecekan nila angka untuk menentukan nilai huruf dan hasil kelulusan
         if (nilai_angka >= 80) {
-            nilai_huruf = "A";
+            nilai_huruf = 'A';
+            hasil_kelulusan = "Lulus";
         } else if (nilai_angka >= 60) {
-            nilai_huruf = "B";
+            nilai_huruf = 'B';
+            hasil_kelulusan = "Lulus";
         } else if (nilai_angka >= 50) {
-            nilai_huruf = "C";
+            nilai_huruf = 'C';
+            hasil_kelulusan = "Lulus";
         } else if (nilai_angka >= 25) {
-            nilai_huruf = "D";
+            nilai_huruf = 'D';
+            hasil_kelulusan = "Tidak Lulus";
         } else {
-            nilai_huruf = "E";
+            nilai_huruf = 'E';
+            hasil_kelulusan = "Tidak Lulus";
         }
-        
-        // System.out.println("Nilai Huruf   : " + nilai_huruf);
 
-        if (nilai_huruf.equals("A") || nilai_huruf.equals("B") || nilai_huruf.equals("C")) {
-            keterangan = "Lulus";
-        } else {
-            keterangan = "Tidak Lulus";
-        }
-        // System.out.println("Keterangan     : " + keterangan);
-
-        System.out.println("=====================================");
-        System.out.println("Rekapan Nilai Akhir Mahasiswa");
-        System.out.println("======================================");
-        System.out.printf("Nilai Tugas   : %d\n", nilai_tugas);
-        System.out.printf("Nilai UTS     : %d\n", nilai_uts);
-        System.out.printf("Nilai UAS     : %d\n", nilai_uas);
-        System.out.printf("Nilai Angka   : %.2f\n", nilai_angka);
-        System.out.printf("Nilai Huruf   : %s\n", nilai_huruf);
-        System.out.printf("Keterangan    : %s\n", keterangan);
-        System.out.println("======================================");
-        input.close();
+        // menampilkan hasil
+        System.out.println("Nilai Huruf : " + nilai_huruf);
+        System.out.println("Hasil Kelulusan : " + hasil_kelulusan);
     }
 }
