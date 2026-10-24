@@ -1,49 +1,40 @@
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args){
-        // definisi variabel
-        int nilai_tugas, nilai_uts, nilai_uas;
-        double nilai_angka;
-        char nilai_huruf;
-        String hasil_kelulusan;
+    public static void main(String[] args) {
+        // deklarasi variabel
+        int nilai_tugas;
+        int nilai_uts;
+        int nilai_uas;
+        float nilai_angka;
+        String nilai_huruf;
 
-        // input data
         Scanner input = new Scanner(System.in);
         System.out.print("Masukkan nilai tugas  : ");
         nilai_tugas = input.nextInt();
-        System.out.print("Masukkan nilai uts    : ");
+        System.out.print("Masukkan nilai UTS    : ");
         nilai_uts = input.nextInt();
-        System.out.print("Masukkan nilai uas    : ");
+        System.out.print("Masukkan nilai UAS    : ");
         nilai_uas = input.nextInt();
+
         System.out.println("Nilai Tugas : " + nilai_tugas);
-        System.out.println("Nilai UTS   : " + nilai_uts);  
+        System.out.println("Nilai UTS   : " + nilai_uts);
         System.out.println("Nilai UAS   : " + nilai_uas);
 
-        // proses perhitungan
-        nilai_angka = (nilai_tugas * 0.2) + (nilai_uts * 0.3) + (nilai_uas * 0.5);
-        System.out.println("Nilai Angka : " + nilai_angka);
+        nilai_angka = (nilai_uas * 0.5f) + (nilai_uts * 0.3f) + (nilai_tugas * 0.2f);
 
-        // pengecekan nila angka untuk menentukan nilai huruf dan hasil kelulusan
         if (nilai_angka >= 80) {
-            nilai_huruf = 'A';
-            hasil_kelulusan = "Lulus";
+            nilai_huruf = "A";
         } else if (nilai_angka >= 60) {
-            nilai_huruf = 'B';
-            hasil_kelulusan = "Lulus";
+            nilai_huruf = "B";
         } else if (nilai_angka >= 50) {
-            nilai_huruf = 'C';
-            hasil_kelulusan = "Lulus";
+            nilai_huruf = "C";
         } else if (nilai_angka >= 25) {
-            nilai_huruf = 'D';
-            hasil_kelulusan = "Tidak Lulus";
+            nilai_huruf = "D";
         } else {
-            nilai_huruf = 'E';
-            hasil_kelulusan = "Tidak Lulus";
+            nilai_huruf = "E";
         }
-
-        // menampilkan hasil
+        System.out.println("Nilai Angka : " + nilai_angka);
         System.out.println("Nilai Huruf : " + nilai_huruf);
-        System.out.println("Hasil Kelulusan : " + hasil_kelulusan);
     }
 }
