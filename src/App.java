@@ -21,7 +21,7 @@ public class App {
 
         // welcome screen
         System.out.println("=====================================");
-        System.out.println("Selamat Datang di Program Penilaian Mahasiswa");
+        System.out.println("Selamat Datang di Program Penilaian Mahasiswa UT");
         System.out.println("=====================================");
 
         for (int i =0; i < nilai_mhs.length; i++) {
